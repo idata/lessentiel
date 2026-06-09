@@ -101,9 +101,7 @@ header{flex-direction:column;align-items:flex-start;gap:8px;padding-bottom:10px;
 h1{font-size:20px}
 .hr{width:100%;display:flex;justify-content:space-between;align-items:center}
 .ck{font-size:11px}
-.sl{margin-top:0;gap:8px}
-.rb svg{width:16px;height:16px}
-.rb{padding:6px;margin-left:6px}
+.sl{display:none}
 .tabs{display:flex;gap:0;margin-bottom:12px;border-bottom:2px solid var(--sep);flex-shrink:0}
 .tab{flex:1;text-align:center;padding:8px 4px;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--c2);cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-2px;transition:color .2s,border-color .2s}
 .tab.active{border-bottom-color:var(--bdr);color:var(--c)}
@@ -126,7 +124,7 @@ h1{font-size:20px}
 <header>
 <div class="hl"><h1 id="logo">L'essentiel<span class="dot">.</span></h1></div>
 <div class="hr"><div class="ck" id="ck"></div><div class="sl"><span class="pu"></span><span id="rn">
-Mis à jour · <span data-ts="1781033299"></span></span><button class="rb" id="tb" title="Mode jour/nuit (D)"></button><button class="rb" id="mal" title="Tout marquer comme lu (L)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></button><button class="rb" id="mau" title="Tout marquer comme non lu (U)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></button><button class="rb" id="rb" title="Rafraîchir (R)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 2v6h-6"/><path d="M3 12a9 9 0 0 1 15-6.7L21 8"/><path d="M3 22v-6h6"/><path d="M21 12a9 9 0 0 1-15 6.7L3 16"/></svg></button></div></div>
+Mis à jour · <span data-ts="1781035930"></span></span><button class="rb" id="tb" title="Mode jour/nuit (D)"></button><button class="rb" id="mal" title="Tout marquer comme lu (L)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></button><button class="rb" id="mau" title="Tout marquer comme non lu (U)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></button><button class="rb" id="rb" title="Rafraîchir (R)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 2v6h-6"/><path d="M3 12a9 9 0 0 1 15-6.7L21 8"/><path d="M3 22v-6h6"/><path d="M21 12a9 9 0 0 1-15 6.7L3 16"/></svg></button></div></div>
 </header>
 <div class="tabs" id="tabs"><div class="tab active" data-col="0">Ici</div><div class="tab" data-col="1">France</div><div class="tab" data-col="2">Monde</div><div class="tab" data-col="3">Tech</div></div>
 <div class="g">
@@ -143,6 +141,8 @@ Mis à jour · <span data-ts="1781033299"></span></span><button class="rb" id="t
 <li class="ni" data-img="https://www.ici.fr/pikapi/images/7f502f67-5dfc-4a3f-a845-b5920d0d7230/920x517?webp=false" data-day="09"><div class="nt">07:31 <span class="sr">ICI</span></div><div class="nn"><a data-url="https://www.ici.fr/emissions/l-info-d-ici-ici-la-rochelle/pour-reperer-des-fuites-l-agglo-de-la-rochelle-change-les-compteurs-d-eau-des-particuliers-par-des-compteurs-connectes-3830310">L’Agglomération de La Rochelle équipe les particuliers de compteurs d’eau connectés pour repérer des fuites</a></div></li>
 </ul></div><div class="fade"></div></div>
 <div class="cw"><div class="c fr"><div class="sh"><span class="sh-dot"></span>France</div><ul>
+<li class="ni" data-img="https://www.franceinfo.fr/pictures/XsUQEzDP04830JICebPRvJz6qEk/43x0:1405x766/432x243/filters:format(jpg)/2026/06/09/6a28700cde210438990770.jpg" data-day="09"><div class="nt">21:57 <span class="sr">FI</span></div><div class="nn"><a data-url="https://www.franceinfo.fr/faits-divers/collegien-tue-dans-un-incendie-a-saint-denis-pierrefitte-on-a-essaye-de-defoncer-la-porte-raconte-un-voisin-qui-est-intervenu-pour-sauver-la-famille_8052818.html">Coll&#xE9;gien tu&#xE9; dans un incendie &#xE0; Saint-Denis-Pierrefitte : "On a essay&#xE9; de d&#xE9;foncer la porte", raconte un voisin qui est intervenu pour sauver la famille</a></div></li>
+<li class="ni" data-img="https://www.franceinfo.fr/pictures/5cQMiX_TfdJ_965KmmsgD6LEEDU/0x24:759x451/432x243/filters:format(jpg)/2026/06/09/6a286e27861d1109245648.jpg" data-day="09"><div class="nt">21:51 <span class="sr">FI</span></div><div class="nn"><a data-url="https://www.franceinfo.fr/france/grand-est/bas-rhin/strasbourg/strasbourg-mobilisation-eclair-de-mineurs-en-centre-ville-apres-une-rumeur-en-ligne_8052821.html">Strasbourg : mobilisation &#xE9;clair de mineurs en centre-ville apr&#xE8;s une rumeur en ligne</a></div></li>
 <li class="ni" data-img="https://www.franceinfo.fr/pictures/K2_vIstKKApqoJGfAa1A3C1lSzo/0x109:2126x1305/432x243/filters:format(jpg)/2026/06/09/6a28630fc865a568958273.jpg" data-day="09"><div class="nt">21:23 <span class="sr">FI</span></div><div class="nn"><a data-url="https://www.franceinfo.fr/faits-divers/disparition-de-lyhanna-dans-le-gers/mort-de-lyhanna-jerome-barella-est-incarcere-au-centre-penitentiaire-de-mont-de-marsan-a-l-isolement_8052776.html">Mort de Lyhanna&#xA0;: J&#xE9;r&#xF4;me Barella est incarc&#xE9;r&#xE9; au centre p&#xE9;nitentiaire de Mont-de-Marsan, &#xE0; l'isolement</a></div></li>
 <li class="ni" data-img="https://www.franceinfo.fr/pictures/Wbpa0uSn0tNfeU3hoCq5SI1HYIs/0x16:838x488/432x243/filters:format(jpg)/2026/06/09/6a28617f727c7682782897.jpg" data-day="09"><div class="nt">20:56 <span class="sr">FI</span></div><div class="nn"><a data-url="https://www.franceinfo.fr/france/auvergne-rhone-alpes/puy-de-dome/clermont-ferrand/clermont-ferrand-instaure-un-couvre-feu-pour-les-moins-de-16-ans-pendant-la-coupe-du-monde_8052770.html">Clermont-Ferrand instaure un couvre-feu pour les moins de 16 ans pendant la Coupe du monde</a></div></li>
 <li class="ni" data-img="https://www.franceinfo.fr/pictures/8tZ1jNL9D9gwzvArIUkcQJnJVX8/0x18:852x498/432x243/filters:format(jpg)/2026/06/09/6a285e882b5e4806061453.jpg" data-day="09"><div class="nt">21:10 <span class="sr">FI</span></div><div class="nn"><a data-url="https://www.franceinfo.fr/societe/justice/a-17-ans-lea-attend-toujours-que-justice-soit-faite-pour-des-faits-denonces-lorsqu-elle-avait-11-ans_8052758.html">VIDEO. "Le viol tue des petites filles int&#xE9;rieurement" : L&#xE9;a, 17 ans, se dit "abandonn&#xE9;e" par la justice apr&#xE8;s la plainte qu'elle a d&#xE9;pos&#xE9;e &#xE0; 11 ans contre un voisin</a></div></li>
@@ -159,10 +159,10 @@ Mis à jour · <span data-ts="1781033299"></span></span><button class="rb" id="t
 <li class="ni" data-img="https://www.franceinfo.fr/pictures/w_V6uwBbGr9aTu51OHhBpLO1mWg/0x53:1024x629/432x243/filters:format(jpg)/2025/11/17/000-69dm7ke-691b3c263d5ab675610111.jpg" data-day="08"><div class="nt">22:13 <span class="sr">FI</span></div><div class="nn"><a data-url="https://www.franceinfo.fr/sports/rugby/une-joueuse-de-rugby-de-dordogne-visee-par-une-insulte-raciste-en-plein-match-va-porter-plainte_8051096.html">Une joueuse de rugby de Dordogne, vis&#xE9;e par une insulte raciste en plein match, va porter plainte</a></div></li>
 <li class="ni" data-img="https://www.franceinfo.fr/pictures/vWN4uRrSlwcPbeDGGiUBP1tLmlY/0x53:1024x629/432x243/filters:format(jpg)/2024/02/22/planning-familial-65d71cc174359117594395.jpg" data-day="08"><div class="nt">22:07 <span class="sr">FI</span></div><div class="nn"><a data-url="https://www.franceinfo.fr/politique/front-national/plus-de-4-000-euros-de-dons-pour-le-planning-familial-prive-de-subventions-par-la-mairie-rn-de-carpentras_8051087.html">Plus de 4&#xA0;000&#xA0;euros de dons pour le Planning familial, priv&#xE9; de subventions par la mairie RN de Carpentras</a></div></li>
 <li class="ni" data-img="https://www.franceinfo.fr/pictures/ka-YjpoEWqBcHfieZMlZxy4pBp4/0x0:1200x675/432x243/filters:format(jpg)/2026/06/08/6a271eabd7e5c966177333.jpg" data-day="08"><div class="nt">22:00 <span class="sr">FI</span></div><div class="nn"><a data-url="https://www.franceinfo.fr/faits-divers/meurtre-d-un-homme-homosexuel-a-sorgues-les-deux-principaux-accuses-ecopent-de-22-ans-de-reclusion-criminelle_8051075.html">Meurtre d'un homme homosexuel &#xE0; Sorgues&#xA0;: les deux principaux accus&#xE9;s &#xE9;copent de 22&#xA0;ans de r&#xE9;clusion criminelle</a></div></li>
-<li class="ni" data-img="https://www.franceinfo.fr/pictures/Xm3RGNfEjmxSdECykqEylUCaMsc/0x53:1024x629/432x243/filters:format(jpg)/2026/05/31/6a1bec1e21e3a009065352.jpg" data-day="08"><div class="nt">21:53 <span class="sr">FI</span></div><div class="nn"><a data-url="https://www.franceinfo.fr/coupe-du-monde/coupe-du-monde-2026-la-ville-de-clermont-ferrand-va-instaurer-un-couvre-feu-pour-les-moins-de-16-ans_8051072.html">Coupe du monde&#xA0;2026&#xA0;: la ville de Clermont-Ferrand va instaurer un couvre-feu pour les moins de 16&#xA0;ans</a></div></li>
-<li class="ni" data-img="https://www.franceinfo.fr/pictures/zfNoIVykDkLQMDl-PThXSf81DtQ/0x433:4624x3034/432x243/filters:format(jpg)/2026/06/08/6a26ed4e29c3a608532924.jpg" data-day="08"><div class="nt">19:36 <span class="sr">FI</span></div><div class="nn"><a data-url="https://www.franceinfo.fr/culture/reportage-claude-monet-a-fait-ses-premiers-pas-ici-au-havre-une-exposition-sur-la-jeunesse-du-peintre-pour-le-centenaire-de-sa-disparition_8050691.html">REPORTAGE. "Claude Monet a fait ses premiers pas ici"&#xA0;: au Havre, une exposition sur la jeunesse du peintre, pour le centenaire de sa disparition</a></div></li>
 </ul></div><div class="fade"></div></div>
 <div class="cw"><div class="c mo"><div class="sh"><span class="sh-dot"></span>Monde</div><ul>
+<li class="ni" data-img="https://www.franceinfo.fr/pictures/PIIA2i28d1aMHWdj8oQwKru-y84/0x0:1080x1920/fit-in/432x243/filters:upscale():fill(black):format(jpg)/2026/06/09/6a285d262e9a2801589028.jpg" data-day="09"><div class="nt">22:00 <span class="sr">FI</span></div><div class="nn"><a data-url="https://www.franceinfo.fr/societe/pedocriminalite/p-dophiles-l-allemagne-a-choisi-la-prevention_8052761.html">P*dophiles : l'Allemagne a choisi la pr&#xE9;vention</a></div></li>
+<li class="ni" data-img="https://www.franceinfo.fr/pictures/5EiRDFu77_vpMKM12kkhVmDt7cs/0x270:5197x3194/432x243/filters:format(jpg)/2026/06/09/6a286ac6f0a30397097826.jpg" data-day="09"><div class="nt">21:40 <span class="sr">FI</span></div><div class="nn"><a data-url="https://www.franceinfo.fr/monde/europe/manifestations-en-ukraine/petrole-peche-tourisme-l-union-europeenne-propose-de-nouvelles-sanctions-contre-moscou-quatre-ans-apres-l-invasion-russe-en-ukraine_8052803.html">P&#xE9;trole, p&#xEA;che, tourisme&#x2026; L'Union europ&#xE9;enne propose de nouvelles sanctions contre Moscou, quatre ans apr&#xE8;s l'invasion russe en Ukraine</a></div></li>
 <li class="ni" data-img="https://www.franceinfo.fr/pictures/PvQ3AxMZ_V2_C2xlj3fjUkzknxU/0x504:4840x3227/432x243/filters:format(jpg)/2026/06/09/6a2850052820b839509068.jpg" data-day="09"><div class="nt">20:17 <span class="sr">FI</span></div><div class="nn"><a data-url="https://www.franceinfo.fr/monde/royaume-uni/les-autorites-britanniques-appellent-au-calme-face-au-risque-de-violences-contre-les-immigres-apres-une-attaque-a-belfast_8052719.html">Les autorit&#xE9;s britanniques appellent au calme face au risque de violences contre les immigr&#xE9;s, apr&#xE8;s une attaque &#xE0; Belfast</a></div></li>
 <li class="ni" data-img="https://www.franceinfo.fr/pictures/sze4LZpJQge-ORFkK9tGR5X7sS0/0x59:1024x635/432x243/filters:format(jpg)/2026/06/09/6a284ad92f3d3998456008.jpg" data-day="09"><div class="nt">19:53 <span class="sr">FI</span></div><div class="nn"><a data-url="https://www.franceinfo.fr/sciences/espace/l-italien-luca-parmitano-sera-le-premier-europeen-dans-une-mission-artemis-annonce-la-nasa_8052707.html">L'Italien Luca Parmitano sera le premier Europ&#xE9;en dans une mission Art&#xE9;mis, annonce la Nasa</a></div></li>
 <li class="ni" data-img="https://www.franceinfo.fr/pictures/gEhczfaCmtrFwHsDx3LhflkMqjI/0x0:1024x576/432x243/filters:format(jpg)/2026/06/09/6a283abc5ad7f971300266.jpg" data-day="09"><div class="nt">18:27 <span class="sr">FI</span></div><div class="nn"><a data-url="https://www.franceinfo.fr/culture/cinema/sorties-de-films/pour-idris-elba-certains-publics-ne-sont-pas-prets-pour-un-james-bond-noir-ou-africain_8050469.html">Pour Idris Elba, certains publics ne sont pas pr&#xEA;ts pour un James Bond noir ou africain</a></div></li>
@@ -170,8 +170,6 @@ Mis à jour · <span data-ts="1781033299"></span></span><button class="rb" id="t
 <li class="ni" data-img="https://www.franceinfo.fr/pictures/RjOYJa8mp5MpvHChn__2W8YIwyk/0x288:5540x3405/432x243/filters:format(jpg)/2026/06/09/6a28138f00e96852174547.jpg" data-day="09"><div class="nt">17:00 <span class="sr">FI</span></div><div class="nn"><a data-url="https://www.franceinfo.fr/societe/harcelement-sexuel/lutte-contre-les-violences-sexuelles-et-sexistes-pourquoi-l-espagne-a-une-longueur-d-avance-par-rapport-a-la-france_8052167.html">Lutte contre les violences sexuelles et sexistes&#xA0;: pourquoi l'Espagne a une longueur d&#x2019;avance par rapport &#xE0; la France</a></div></li>
 <li class="ni" data-img="https://www.franceinfo.fr/pictures/jcX7O1J76e5XogObJIrYNA2I7Ro/0x254:4928x3026/432x243/filters:format(jpg)/2026/06/09/6a282603a2f1a616409580.jpg" data-day="09"><div class="nt">16:45 <span class="sr">FI</span></div><div class="nn"><a data-url="https://www.franceinfo.fr/monde/vatican/pape-leon-xiv/le-pape-leon-xiv-celebrera-une-messe-a-lourdes-mais-aussi-a-paris-et-a-metz-lors-de-sa-visite-en-septembre_8052359.html">Le pape L&#xE9;on XIV c&#xE9;l&#xE8;brera une messe &#xE0; Lourdes, mais aussi &#xE0; Paris et &#xE0; Metz lors de sa visite en septembre</a></div></li>
 <li class="ni" data-img="https://www.franceinfo.fr/pictures/l3TfRIKBa556BCrn5fTmArPZc7A/0x0:1080x1920/fit-in/432x243/filters:upscale():fill(black):format(jpg)/2026/06/09/6a285a417408f024730628.jpg" data-day="09"><div class="nt">16:37 <span class="sr">FI</span></div><div class="nn"><a data-url="https://www.franceinfo.fr/monde/europe/manifestations-en-ukraine/des-rafale-francais-abattent-un-drone-en-lettonie_8052365.html">Des Rafale fran&#xE7;ais abattent un drone en Lettonie</a></div></li>
-<li class="ni" data-img="https://www.franceinfo.fr/pictures/_FJeIVLQRQc712fpmZsxwu4OtTc/0x5:766x436/432x243/filters:format(jpg)/2026/06/09/6a2822379c966781148608.jpg" data-day="09"><div class="nt">17:41 <span class="sr">FI</span></div><div class="nn"><a data-url="https://www.franceinfo.fr/monde/japon/un-ours-brun-capture-apres-quatre-jours-de-panique-au-nord-de-tokyo_8052308.html">Un ours brun captur&#xE9; apr&#xE8;s quatre jours de panique au nord de Tokyo</a></div></li>
-<li class="ni" data-img="https://www.franceinfo.fr/pictures/CEk4TFYva8c_FTCkenFtqWhRqsQ/0x53:1024x629/432x243/filters:format(jpg)/2026/06/09/6a27fe1cde7ed728604945.jpg" data-day="09"><div class="nt">15:34 <span class="sr">FI</span></div><div class="nn"><a data-url="https://www.franceinfo.fr/monde/israel/cisjordanie-occupee-la-france-interdit-d-entree-sur-son-territoire-le-ministre-des-finances-israelien-bezalel-smotrich-ainsi-qu-une-vingtaine-de-colons_8052194.html">Cisjordanie occup&#xE9;e&#xA0;: la France interdit d'entr&#xE9;e sur son territoire le ministre des Finances isra&#xE9;lien, Bezalel Smotrich, ainsi qu'une vingtaine de colons</a></div></li>
 <li class="ni" data-img="https://s.france24.com/media/display/5a868364-642b-11f1-a895-005056a90284/w:1024/p:16x9/Francais-2026-06-09T17-16-26-083Z.jpg" data-day="09"><div class="nt">18:20 <span class="sr">F24</span></div><div class="nn"><a data-url="https://www.france24.com/fr/%C3%A9missions/le-d%C3%A9bat/20260609-kim-jong-un-embarrasse-t-il-la-chine">Kim Jong-un embarrasse-t-il la Chine ?</a></div></li>
 <li class="ni" data-img="https://s.france24.com/media/display/f2f9e4e8-6420-11f1-ad4a-005056bf30b7/w:1024/p:16x9/000-B6E28WE.jpg" data-day="09"><div class="nt">17:47 <span class="sr">F24</span></div><div class="nn"><a data-url="https://www.france24.com/fr/france/20260609-affaire-patrick-bruel-la-justice-avait-largement-de-quoi-enqu%C3%AAter-et-avancer-d%C3%A8s-2019">Affaire Patrick Bruel : "La justice avait largement de quoi enquêter et avancer" dès 2019</a></div></li>
 <li class="ni" data-img="https://s.france24.com/media/display/ef493398-6412-11f1-9666-005056a90284/w:1024/p:16x9/fc41716893734bf860008aa610e56eede98d1a4e.jpg" data-day="09"><div class="nt">17:15 <span class="sr">F24</span></div><div class="nn"><a data-url="https://www.france24.com/fr/asie-pacifique/20260609-afghanistan-la-police-afghane-disperse-violemment-un-rassemblement-en-faveur-des-droits-des-femmes-burqa-tchador">Afghanistan : la police afghane disperse violemment une manifestation de soutien aux femmes</a></div></li>
@@ -212,10 +210,10 @@ function tk(){
   var n=new Date();
   var d=n.toLocaleDateString("fr-FR",{weekday:"long",day:"numeric",month:"long",year:"numeric"});
   var t=n.toLocaleTimeString("fr-FR",{hour:"2-digit",minute:"2-digit"});
-  document.getElementById("ck").textContent=d.charAt(0).toUpperCase()+d.slice(1)+" · "+t;
+  document.getElementById("ck").textContent=d.charAt(0).toUpperCase()+d.slice(1)+(isMobile?"":" · "+t);
   var ago=Math.floor((n.getTime()-buildTs)/60000);
   var el=document.querySelector("[data-ts]");
-  if(ago<1)el.textContent="à l\u2019instant";
+  if(ago<1)el.textContent="à l’instant";
   else if(ago<60)el.textContent="il y a "+ago+"min";
   else if(ago<1440)el.textContent="il y a "+Math.floor(ago/60)+"h";
   else el.textContent="il y a "+Math.floor(ago/1440)+"j";
@@ -256,10 +254,7 @@ document.querySelectorAll("a[data-url]").forEach(function(a){
 });
 
 function updateTitle(){
-  var total=document.querySelectorAll(".ni").length;
-  var rd=document.querySelectorAll(".ni.rd").length;
-  var unread=total-rd;
-  document.title=unread>0?"("+unread+") L\u2019essentiel":"L\u2019essentiel";
+  document.title="L’essentiel";
 }
 function checkAllRead(){
   document.querySelectorAll(".c").forEach(function(col){
@@ -317,12 +312,12 @@ function openReader(ni){
   var img=ni.getAttribute("data-img")||"";
   var time=ni.querySelector(".nt").textContent.trim();
   var src=ni.querySelector(".sr").textContent.trim();
-  readerSrc.textContent=src+" \u00b7 "+time;
+  readerSrc.textContent=src+" · "+time;
   var h='<h2>'+title+'</h2>';
-  h+='<div class="reader-meta">'+src+' \u00b7 '+time+'</div>';
+  h+='<div class="reader-meta">'+src+' · '+time+'</div>';
   if(img)h+='<img class="reader-img" src="'+img+'" style="display:block" onerror="this.style.display=\'none\'">';
-  h+='<div class="reader-txt"><span class="reader-loading">Chargement\u2026</span></div>';
-  h+='<a class="reader-link" href="'+url+'" target="_blank">Ouvrir sur le site \u2192</a>';
+  h+='<div class="reader-txt"><span class="reader-loading">Chargement…</span></div>';
+  h+='<a class="reader-link" href="'+url+'" target="_blank">Ouvrir sur le site →</a>';
   readerBody.innerHTML=h;
   readerBody.scrollTop=0;
   reader.classList.add("open");
@@ -507,7 +502,7 @@ document.querySelectorAll(".c").forEach(function(col){
   var lis=ul.querySelectorAll(".ni");
   var prevDay=null;
   var sh=col.querySelector(".sh");
-  if(sh&&lis.length>0){var sp=document.createElement("span");sp.className="cnt";sp.textContent="\u00b7 "+lis.length;sh.appendChild(sp)}
+  if(sh&&lis.length>0){var sp=document.createElement("span");sp.className="cnt";sp.textContent="· "+lis.length;sh.appendChild(sp)}
   lis.forEach(function(el){
     var dayStr=el.getAttribute("data-day");
     var day=dayStr?parseInt(dayStr):null;
