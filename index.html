@@ -95,6 +95,9 @@ ul{list-style:none}
 .reader-bar{flex-shrink:0;display:flex;justify-content:space-between;align-items:center;padding:16px 24px;border-bottom:1px solid var(--sep)}
 .reader-close{background:none;border:none;cursor:pointer;color:var(--c2);font-size:18px;line-height:1;padding:4px 8px;opacity:.5;transition:opacity .2s;font-family:'IBM Plex Mono',monospace}
 .reader-close:hover{opacity:1}
+.reader-tts-header{display:none;background:none;border:none;cursor:pointer;color:var(--c2);padding:4px 8px;opacity:.5;transition:opacity .2s}
+.reader-tts-header:hover{opacity:1}
+.reader-tts-header svg{width:16px;height:16px}
 .reader-src{font-size:9px;color:var(--c2);letter-spacing:1px;text-transform:uppercase}
 .reader-body{flex:1;overflow-y:auto;padding:24px 28px;-webkit-overflow-scrolling:touch}
 .reader-body::-webkit-scrollbar{display:none}
@@ -140,19 +143,24 @@ header{flex-direction:column;align-items:flex-start;gap:8px;padding-bottom:10px;
 .hl{gap:10px}
 h1{font-size:20px}
 .hr{width:100%;display:flex;justify-content:space-between;align-items:center}
-.ck{font-size:11px}
+.ck{display:none}
+#iphonebtn{display:none}
 .sl{font-size:9px;margin-top:4px;display:flex;align-items:center;gap:6px}
 .meteo{display:block;margin:4px 0 0}
 .tabs{display:flex}
 .g{grid-template-columns:1fr;grid-template-rows:auto;gap:0}
 .cw{display:none;border:none!important;opacity:1;animation:none}
-.cw.mob-active{display:block}
+.cw.mob-active{display:block;animation:slideIn .25s ease}
+@keyframes slideIn{from{opacity:0;transform:translateX(30px)}to{opacity:1;transform:translateX(0)}}
+.cw.mob-active.slide-left{animation:slideLeft .25s ease}
+@keyframes slideLeft{from{opacity:0;transform:translateX(-30px)}to{opacity:1;transform:translateX(0)}}
 .cw .c{padding:0!important}
 .sh{display:none}
 .fade{display:none}
 .img-pop{display:none!important}
 .pull-indicator{text-align:center;font-size:10px;color:var(--c2);padding:8px;opacity:0;transition:opacity .2s}
 .pull-indicator.visible{opacity:1}
+.reader-tts-header{display:flex!important}
 .ni{grid-template-columns:42px 1fr;padding:10px 4px}
 .nn{font-size:13px;line-height:1.5}
 .reader{width:100vw;right:-100vw}
@@ -161,12 +169,12 @@ h1{font-size:20px}
 .reader-body .reader-img{width:100%;float:none;margin-left:0;margin-bottom:16px;max-height:200px;object-fit:cover}
 .search-bar{padding:12px 16px}
 }
-</style><style>.tabs{display:flex!important}.g{grid-template-columns:1fr!important;grid-template-rows:auto!important}.cw{display:none!important;border:none!important;opacity:1!important;animation:none!important}.cw.mob-active{display:block!important}.sh{display:none!important}.fade{display:none!important}.img-pop{display:none!important}.p{padding:16px 16px 0!important}header{flex-direction:column!important;align-items:flex-start!important;gap:8px!important}.sl{font-size:9px!important;margin-top:4px!important;display:flex!important;align-items:center!important;gap:6px!important}.ni{grid-template-columns:42px 1fr!important}.nn{font-size:13px!important}.reader{width:100vw!important;right:-100vw!important}.reader.open{right:0!important}.meteo{display:block!important;margin:4px 0 0!important}.pull-indicator{text-align:center;font-size:10px;color:var(--c2);padding:8px;opacity:0;transition:opacity .2s}.pull-indicator.visible{opacity:1}</style></head><body>
+</style><style>.tabs{display:flex!important}.g{grid-template-columns:1fr!important;grid-template-rows:auto!important}.cw{display:none!important;border:none!important;opacity:1!important;animation:none!important}.cw.mob-active{display:block!important;animation:slideIn .25s ease!important}@keyframes slideIn{from{opacity:0;transform:translateX(30px)}to{opacity:1;transform:translateX(0)}}.cw.mob-active.slide-left{animation:slideLeft .25s ease!important}@keyframes slideLeft{from{opacity:0;transform:translateX(-30px)}to{opacity:1;transform:translateX(0)}}.sh{display:none!important}.fade{display:none!important}.img-pop{display:none!important}.p{padding:16px 16px 0!important}header{flex-direction:column!important;align-items:flex-start!important;gap:8px!important}.ck{display:none!important}#iphonebtn{display:none!important}.sl{font-size:9px!important;margin-top:4px!important;display:flex!important;align-items:center!important;gap:6px!important}.ni{grid-template-columns:42px 1fr!important}.nn{font-size:13px!important}.reader{width:100vw!important;right:-100vw!important}.reader.open{right:0!important}.reader-tts-header{display:flex!important}.meteo{display:block!important;margin:4px 0 0!important}.pull-indicator{text-align:center;font-size:10px;color:var(--c2);padding:8px;opacity:0;transition:opacity .2s}.pull-indicator.visible{opacity:1}</style></head><body>
 <div class="p">
 <header>
 <div class="hl"><h1 id="logo">L'essentiel<span class="dot">.</span></h1></div><span class="meteo" id="meteo"></span>
 <div class="hr"><div class="ck" id="ck"></div><div class="sl"><span class="pu"></span><span id="rn">
-Mis à jour · <span data-ts="1781166234"></span></span><button class="rb" id="tb" title="Mode jour/nuit (D)"></button><button class="rb" id="mal" title="Tout marquer comme lu (L)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></button><button class="rb" id="mau" title="Tout marquer comme non lu (U)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></button><button class="rb" id="sb" title="Rechercher (/)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg></button><button class="rb" id="iphonebtn" title="Ouvrir sur iPhone" onclick="window.open(&apos;http://localhost:5151/?mobile&apos;,&apos;_blank&apos;)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="3"/><line x1="12" y1="18" x2="12" y2="18.01"/></svg></button><button class="rb" id="rb" title="Rafraîchir (R)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 2v6h-6"/><path d="M3 12a9 9 0 0 1 15-6.7L21 8"/><path d="M3 22v-6h6"/><path d="M21 12a9 9 0 0 1-15 6.7L3 16"/></svg></button></div></div>
+Mis à jour · <span data-ts="1781166748"></span></span><button class="rb" id="tb" title="Mode jour/nuit (D)"></button><button class="rb" id="mal" title="Tout marquer comme lu (L)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></button><button class="rb" id="mau" title="Tout marquer comme non lu (U)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></button><button class="rb" id="sb" title="Rechercher (/)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg></button><button class="rb" id="iphonebtn" title="Ouvrir sur iPhone" onclick="window.open(&apos;http://localhost:5151/?mobile&apos;,&apos;_blank&apos;)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="3"/><line x1="12" y1="18" x2="12" y2="18.01"/></svg></button><button class="rb" id="rb" title="Rafraîchir (R)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 2v6h-6"/><path d="M3 12a9 9 0 0 1 15-6.7L21 8"/><path d="M3 22v-6h6"/><path d="M21 12a9 9 0 0 1-15 6.7L3 16"/></svg></button></div></div>
 </header>
 <div class="search-bar" id="search-bar"><input type="text" id="search-input" placeholder="Rechercher…"><button class="search-close" id="search-close">✕</button></div>
 <div class="tabs" id="tabs"><div class="tab active" data-col="0">Local</div><div class="tab" data-col="1">France</div><div class="tab" data-col="2">Monde</div><div class="tab" data-col="3">Tech</div><div class="tab" data-col="4">Sport</div><div class="tab" data-col="5">Écrans</div></div>
@@ -235,6 +243,8 @@ Mis à jour · <span data-ts="1781166234"></span></span><button class="rb" id="t
 <li class="ni" data-img="https://pic.clubic.com/v1/images/2421199/raw" data-day="11"><div class="nt">06:25 <span class="sr">CLB</span></div><div class="nn"><a data-url="https://www.clubic.com/actualite-616291-sur-android-opera-veut-devenir-votre-navigateur-par-defaut-pendant-la-coupe-du-monde.html">Sur Android, Opera veut devenir votre navigateur par défaut pendant la Coupe du monde</a></div></li>
 <li class="ni" data-img="https://pic.clubic.com/v1/images/2421430/raw" data-day="11"><div class="nt">06:08 <span class="sr">CLB</span></div><div class="nn"><a data-url="https://www.clubic.com/actualite-616342-la-2g-s-eteint-en-france-et-des-millions-de-cartes-sim-qui-arrivent-a-expiration-sont-encore-actives.html">La 2G s'éteint en France et des millions de cartes SIM qui arrivent à expiration sont encore actives</a></div></li>
 <li class="ni" data-img="https://pic.clubic.com/v1/images/2421196/raw" data-day="11"><div class="nt">06:06 <span class="sr">CLB</span></div><div class="nn"><a data-url="https://www.clubic.com/bons-plans-616294-petit-prix-et-config-solide-ce-mini-pc-avec-ryzen-3300u-avec-16-512-go-est-a--30-sur-amazon.html">Petit prix et config solide : ce mini PC avec Ryzen 3300U avec 16+512 Go est à -30% sur Amazon</a></div></li>
+<li class="ni" data-img="https://c0.lestechnophiles.com/www.numerama.com/wp-content/uploads/2026/06/gran-turismo-7-24-heures-du-mans-2026-2.jpg" data-day="11"><div class="nt">08:30 <span class="sr">NUM</span></div><div class="nn"><a data-url="https://www.numerama.com/pop-culture/2273533-gran-turismo-met-a-lhonneur-la-plus-grande-course-automobile-du-monde-avec-cinq-nouvelles-voitures.html">Gran Turismo met à l&#8217;honneur la plus grande course automobile du monde avec cinq nouvelles voitures</a></div></li>
+<li class="ni" data-img="https://c0.lestechnophiles.com/www.numerama.com/wp-content/uploads/2026/06/capture-decran-2026-06-11-a-100546.jpg" data-day="11"><div class="nt">08:25 <span class="sr">NUM</span></div><div class="nn"><a data-url="https://www.numerama.com/pop-culture/2273535-mais-ou-est-passe-lepisode-23-24-jump-street-est-officiellement-en-preparation-chez-sony.html">Mais où est passé l&#8217;épisode 23 ? 24 Jump Street est officiellement en préparation chez Sony</a></div></li>
 <li class="ni" data-img="https://c0.lestechnophiles.com/www.numerama.com/wp-content/uploads/2026/06/1-9.jpg" data-day="11"><div class="nt">07:47 <span class="sr">NUM</span></div><div class="nn"><a data-url="https://www.numerama.com/tech/2273513-coupe-du-monde-2026-whatsapp-a-cache-une-petite-surprise-dans-vos-messages.html">Coupe du monde 2026 : WhatsApp a caché une petite surprise dans vos messages</a></div></li>
 <li class="ni" data-img="https://c0.lestechnophiles.com/www.numerama.com/wp-content/uploads/2025/10/halo-campaign-evolved-capture.jpg" data-day="11"><div class="nt">07:21 <span class="sr">NUM</span></div><div class="nn"><a data-url="https://www.numerama.com/pop-culture/2272977-pour-la-premiere-fois-le-prochain-halo-est-disponible-en-precommande-sur-la-ps5.html">Pour la première fois, le prochain Halo est disponible en précommande sur la PS5</a></div></li>
 <li class="ni" data-img="https://c0.lestechnophiles.com/www.numerama.com/wp-content/uploads/2026/06/siri-ai.jpg" data-day="11"><div class="nt">07:10 <span class="sr">NUM</span></div><div class="nn"><a data-url="https://www.numerama.com/tech/2273487-toutes-les-nouveautes-cachees-dans-ios-27-et-macos-27-dont-apple-na-pas-parle.html">Toutes les nouveautés cachées dans iOS 27 et macOS 27 dont Apple n&#8217;a pas parlé</a></div></li>
@@ -242,8 +252,6 @@ Mis à jour · <span data-ts="1781166234"></span></span><button class="rb" id="t
 <li class="ni" data-img="https://c0.lestechnophiles.com/www.numerama.com/wp-content/uploads/2026/06/capture-decran-2026-06-08-a-105533.jpg" data-day="11"><div class="nt">05:53 <span class="sr">NUM</span></div><div class="nn"><a data-url="https://www.numerama.com/pop-culture/2273491-finies-les-paillettes-xbox-vit-une-nouvelle-periode-sombre.html">Finies les paillettes, Xbox vit une nouvelle période sombre</a></div></li>
 <li class="ni" data-img="https://c0.lestechnophiles.com/www.numerama.com/wp-content/uploads/2026/06/nuevos-rayban-gen-2-novedosas-ga.jpg" data-day="11"><div class="nt">05:31 <span class="sr">NUM</span></div><div class="nn"><a data-url="https://www.numerama.com/tech/2271555-ray-ban-meta-les-lunettes-pour-laisser-son-smartphone-au-fond-du-sac-sont-chez-krys.html">Ray-Ban Meta : les lunettes pour laisser son smartphone au fond du sac sont chez Krys [Sponso]</a></div></li>
 <li class="ni" data-img="https://c0.lestechnophiles.com/www.numerama.com/wp-content/uploads/2026/06/defi-dk.jpg" data-day="11"><div class="nt">05:02 <span class="sr">NUM</span></div><div class="nn"><a data-url="https://www.numerama.com/tech/2272629-nintendo-fait-un-petit-pas-en-avant-dans-lintroduction-des-trophees-dans-ses-jeux.html">Nintendo fait un petit pas en avant dans l&#8217;introduction des trophées dans ses jeux</a></div></li>
-<li class="ni" data-img="https://c0.lestechnophiles.com/www.numerama.com/wp-content/uploads/2026/06/pesquet-parmitano.jpg" data-day="10"><div class="nt">20:44 <span class="sr">NUM</span></div><div class="nn"><a data-url="https://www.numerama.com/sciences/2273193-luca-parmitano-artemis-iii-avait-des-records-dans-liss-puis-thomas-pesquet-est-arrive.html">Luca Parmitano (Artémis III) avait des records dans l&#8217;ISS, puis Thomas Pesquet est arrivé</a></div></li>
-<li class="ni" data-img="https://c0.lestechnophiles.com/www.numerama.com/wp-content/uploads/2026/06/design-sans-titre-2026-06-10t171933409.jpg" data-day="10"><div class="nt">19:45 <span class="sr">NUM</span></div><div class="nn"><a data-url="https://www.numerama.com/cyberguerre/2273125-la-boite-de-pandore-est-ouverte-dopee-par-lia-la-chasse-aux-failles-de-microsoft-bat-un-record.html">« La boîte de Pandore est ouverte » : dopée par l&#8217;IA, la chasse aux failles de Microsoft bat un record</a></div></li>
 </ul></div><div class="fade"></div></div>
 <div class="cw"><div class="c sp"><div class="sh"><span class="sh-dot"></span>Sport</div><ul>
 <li class="ni" data-img="https://www.franceinfo.fr/pictures/DPFiBFajopdIYa6OjuDfIxCXhAY/0x0:7728x4347/432x243/filters:format(jpg)/2026/06/11/6a2a698a6b385681497179.jpg" data-day="11"><div class="nt">10:13 <span class="sr">FI</span></div><div class="nn"><a data-url="https://www.franceinfo.fr/coupe-du-monde/coupe-du-monde-2026-la-fifa-demande-a-la-selection-d-haiti-de-modifier-son-maillot-a-la-veille-de-la-competition_8055299.html">Coupe du monde 2026 : la Fifa demande &#xE0; la s&#xE9;lection d'Ha&#xEF;ti de modifier son maillot &#xE0; la veille de la comp&#xE9;tition</a></div></li>
@@ -282,7 +290,7 @@ Mis à jour · <span data-ts="1781166234"></span></span><button class="rb" id="t
 <li class="ni" data-img="https://image.jeuxvideo.com/medias-lg/178100/1780996813-1207-card.jpg" data-day="10"><div class="nt">22:30 <span class="sr">JV</span></div><div class="nn"><a data-url="https://www.jeuxvideo.com/news/2087654/ce-studio-xbox-fait-litteralement-un-bras-d-honneur-aux-fans-ps5-frustres-tous-les-coups-sont-permis.htm">Ce studio XBOX fait littéralement un bras d'honneur aux fans PS5 frustrés, tous les coups sont permis !</a></div></li>
 </ul></div><div class="fade"></div></div>
 </div></div>
-<div class="reader" id="reader"><div class="reader-bar"><span class="reader-src" id="reader-src"></span><button class="reader-close" id="reader-close">✕</button></div><div class="reader-body" id="reader-body"></div></div>
+<div class="reader" id="reader"><div class="reader-bar"><span class="reader-src" id="reader-src"></span><div style="display:flex;align-items:center;gap:4px"><button class="reader-tts-header" id="reader-tts-header" title="Lecture vocale"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg></button><button class="reader-close" id="reader-close">✕</button></div></div><div class="reader-body" id="reader-body"></div></div>
 <script>(function(){
 var BASE=location.protocol==='file:'?'http://localhost:5151':'';
 var buildTs=parseInt(document.querySelector("[data-ts]").getAttribute("data-ts"))*1000;
@@ -307,10 +315,13 @@ var manual=false;
 var tb=document.getElementById("tb");
 var moonSVG='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
 var sunSVG='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><path d="M12 1v2m0 18v2M4.22 4.22l1.42 1.42m12.72 12.72l1.42 1.42M1 12h2m18 0h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>';
-if(mq.matches)html.classList.add("dark");
+var savedTheme=localStorage.getItem('lessentiel_theme');
+if(savedTheme==='dark')html.classList.add("dark");
+else if(savedTheme==='light')html.classList.remove("dark");
+else if(mq.matches)html.classList.add("dark");
 function ui(){tb.innerHTML=html.classList.contains("dark")?sunSVG:moonSVG}
 mq.addEventListener("change",function(e){if(!manual){if(e.matches)html.classList.add("dark");else html.classList.remove("dark");ui()}});
-tb.addEventListener("click",function(){manual=true;html.classList.toggle("dark");ui()});
+tb.addEventListener("click",function(){manual=true;html.classList.toggle("dark");localStorage.setItem('lessentiel_theme',html.classList.contains("dark")?'dark':'light');ui()});
 ui();
 
 document.getElementById("rb").addEventListener("click",function(){location.reload()});
@@ -456,6 +467,7 @@ function toggleTTS(){
 readerBody.addEventListener('click',function(e){
   if(e.target.closest('.reader-tts'))toggleTTS();
 });
+document.getElementById('reader-tts-header').addEventListener('click',function(){toggleTTS()});
 
 var readerLeaveTimer=null;
 document.getElementById("reader-close").addEventListener("click",function(){cleanupTTS();reader.classList.remove("open")});
@@ -564,10 +576,16 @@ if(isMobile){
     var dx=e.changedTouches[0].clientX-swipeStartX;
     var dy=e.changedTouches[0].clientY-swipeStartY;
     if(Math.abs(dx)>60&&Math.abs(dx)>Math.abs(dy)*1.5){
+      var prev=activeCol;
       if(dx<0&&activeCol<5)activeCol++;
       else if(dx>0&&activeCol>0)activeCol--;
-      tabs.forEach(function(t,i){if(i===activeCol)t.classList.add("active");else t.classList.remove("active")});
-      cws.forEach(function(cw,i){if(i===activeCol)cw.classList.add("mob-active");else cw.classList.remove("mob-active")});
+      if(prev!==activeCol){
+        tabs.forEach(function(t,i){if(i===activeCol)t.classList.add("active");else t.classList.remove("active")});
+        cws.forEach(function(cw,i){
+          if(i===activeCol){cw.classList.remove("mob-active","slide-left");void cw.offsetWidth;cw.classList.add("mob-active");if(dx>0)cw.classList.add("slide-left")}
+          else{cw.classList.remove("mob-active","slide-left")}
+        });
+      }
     }
   },{passive:true});
 
@@ -782,18 +800,22 @@ setTimeout(function refresh(){
 
 (function loadMeteo(){
   var wmo={0:'☀',1:'🌤',2:'⛅',3:'☁',45:'🌫',48:'🌫',51:'🌦',53:'🌧',55:'🌧',61:'🌧',63:'🌧',65:'🌧',71:'🌨',73:'🌨',75:'🌨',77:'🌨',80:'🌦',81:'🌧',82:'🌧',85:'🌨',86:'🌨',95:'⛈',96:'⛈',99:'⛈'};
-  fetch('https://api.open-meteo.com/v1/forecast?latitude=45.65&longitude=0.16&daily=temperature_2m_max,weather_code&timezone=Europe/Paris&forecast_days=3')
-  .then(function(r){return r.json()})
-  .then(function(d){
-    var el=document.getElementById('meteo');
+  var el=document.getElementById('meteo');
+  function render(d){
     var h='';
     for(var i=0;i<3;i++){
       var t=Math.round(d.daily.temperature_2m_max[i]);
       var w=d.daily.weather_code[i];
-      var ico=wmo[w]||'🌤';
-      h+='<span>'+t+'° '+ico+'</span>';
+      h+='<span>'+t+'° '+(wmo[w]||'🌤')+'</span>';
     }
     el.innerHTML=h;
+  }
+  try{var cached=JSON.parse(localStorage.getItem('lessentiel_meteo'));if(cached&&Date.now()-cached.ts<3600000)render(cached.d)}catch(e){}
+  fetch('https://api.open-meteo.com/v1/forecast?latitude=45.65&longitude=0.16&daily=temperature_2m_max,weather_code&timezone=Europe/Paris&forecast_days=3')
+  .then(function(r){return r.json()})
+  .then(function(d){
+    render(d);
+    try{localStorage.setItem('lessentiel_meteo',JSON.stringify({d:d,ts:Date.now()}))}catch(e){}
   })
   .catch(function(){});
 })();
